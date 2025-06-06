@@ -28,13 +28,13 @@ function draw() {
       c.atualizar();
       c.exibir();
 
-      if (c.colidiuCom(plataforma)) {
-        if (c.cor === 'white green') {
-          pontuacao++;
-        } else if (c.cor === 'black') {
-          jogoAcabou = true;
-        }
-        circulos.splice(i, 1); // remove o círculo após colisão
+        if (c.colidiuCom(plataforma)) {
+  if (c.cor === 'green') {  // Se o círculo for verde, adiciona ponto
+    pontuacao++;
+  } else if (c.cor === 'black') {
+    jogoAcabou = true;  // Se o círculo for preto, o jogo acaba
+  }
+  circulos.splice(i, 1); // remove o círculo após colisão
       } else if (c.y - c.raio > height) {
         // Círculo saiu da tela
         if (c.cor === 'green') {
